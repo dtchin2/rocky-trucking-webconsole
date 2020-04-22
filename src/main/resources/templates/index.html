@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <header th:insert="mainHeader.html"></header>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4" align="center">Rocky Trucking Web Console</h1>
+        <p class="lead" align="center">This application is for Rocky Trucking Employees to manage customer information and invoices.</p>
+        <hr class="my-4">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Locations</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Customer Locations</h6>
+                        <p class="card-text">Manage Location Information. Add a new location or edit an existing one.</p>
+                        <a href="#" class="card-link">Locations</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Customers</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Rocky Trucking Customers</h6>
+                        <p class="card-text">Manage Customer Information. Add a new customer or edit an existing one.</p>
+                        <a href="#" class="card-link">Customers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Invoices</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Rocky Trucking Invoices</h6>
+                        <p class="card-text">Manage Invoices. Add a new invoice and assign it to a customer or edit and existing one.</p>
+                        <a href="#" class="card-link">Invoices</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
