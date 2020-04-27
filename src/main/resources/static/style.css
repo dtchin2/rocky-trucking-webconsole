@@ -1,0 +1,14 @@
+.header {
+    text-align: center;
+    font-size: 50px;
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+}
+
+.add-btn-right {
+    float: right;
+    padding: 30px;
+}

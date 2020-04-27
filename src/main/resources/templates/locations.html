@@ -3,8 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Locations</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header th:insert="mainHeader.html"></header>
+
+    <br/>
+    <br/>
+        <h1 class="header">Customer Locations</h1>
+    <br/>
+    <br/>
+    <br/>
+
+    <div class="container">
+        <!-- add location button-->
+        <a class="btn btn-primary add-btn-right" th:href="@{addLocation}" role="button">Add</a>
+        <br/>
+        <br/>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Location Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Address 2</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Zip</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="location : ${locations}">
+                <tr>
+                    <td th:text="${location.getLocationName()}"></td>
+                    <td th:text="${location.getLocationAddress1()}"></td>
+                    <td th:text="${location.getLocationAddress2()}"></td>
+                    <td th:text="${location.getLocationCity()}"></td>
+                    <td th:text="${location.getLocationStateAbbr()}"></td>
+                    <td th:text="${location.getLocationZipCode()}"></td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
