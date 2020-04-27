@@ -1,16 +1,37 @@
 package com.rta.wc.entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "invoice")
 public class Invoice {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="invoice_id")
     private Long invoiceId;
+
+    @Column(name="invoice_name")
     private String invoiceName;
+
+    @Column(name="invoice_start")
     private Date invoiceStartDate;
+
+    @Column(name="invoice_due")
     private Date invoiceDueDate;
+
+    @Column(name="invoice_amnt")
     private Double invoiceAmount;
+
+    @Column(name="invoice_od")
     private Boolean invoiceOverDue;
+
+    @Column(name="invoice_paid")
     private Boolean invoicePaid;
+
+    @ManyToOne(fetch = FetchType.EAGER ,cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name="cust_id")
     private Customer customer;
 
     public Invoice(){}

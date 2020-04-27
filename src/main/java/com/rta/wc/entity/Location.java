@@ -1,14 +1,38 @@
 package com.rta.wc.entity;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "cust_loc")
 public class Location {
 
+    @Id
+    @Column(name = "cust_locationid")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long locationId;
+
+    @Column(name = "cust_locationname")
     private String locationName;
+
+    @Column(name = "cust_locationaddress1")
     private String locationAddress1;
+
+    @Column(name = "cust_locationaddress2")
     private String locationAddress2;
+
+    @Column(name = "cust_locationcity")
     private String locationCity;
+
+    @Column(name = "cust_locationstateabbr")
     private String locationStateAbbr;
+
+    @Column(name = "cust_locationzip")
     private String locationZipCode;
+
+    @OneToMany
+    @JoinColumn(name = "cust_id")
+    private List<Customer> customers;
 
     public Location(){}
 
@@ -77,15 +101,25 @@ public class Location {
         this.locationZipCode = locationZipCode;
     }
 
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
     @Override
     public String toString() {
         return "Location{" +
-                "locationName='" + locationName + '\'' +
+                "locationId=" + locationId +
+                ", locationName='" + locationName + '\'' +
                 ", locationAddress1='" + locationAddress1 + '\'' +
                 ", locationAddress2='" + locationAddress2 + '\'' +
                 ", locationCity='" + locationCity + '\'' +
                 ", locationStateAbbr='" + locationStateAbbr + '\'' +
                 ", locationZipCode='" + locationZipCode + '\'' +
+                ", customers=" + customers +
                 '}';
     }
 }
