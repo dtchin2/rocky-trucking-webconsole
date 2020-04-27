@@ -1,13 +1,35 @@
 package com.rta.wc.entity;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "customer")
 public class Customer {
 
+    @Id
+    @Column(name = "cust_id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long custId;
+
+    @Column(name = "cust_fname")
     private String custFirstName;
+
+    @Column(name = "cust_lname")
     private String custLastName;
+
+    @Column(name = "cust_email")
     private String customerEmail;
+
+    @Column(name = "cust_phonenum")
     private String customerPhoneNum;
+
+    @ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "cust_locationid")
     private Location location;
+
+    @OneToMany(fetch = FetchType.EAGER ,mappedBy="customer", cascade= CascadeType.ALL)
+    private List<Invoice> invoices;
 
     public Customer(){}
 
