@@ -24,6 +24,11 @@ public class LocationController {
 
     @PostMapping("/addLocation")
     public String addLocationObj(Location location){
+
+        if(location != null) {
+            dao.save(location);
+        }
+
         return "comp/addLocationConfirmation";
     }
 }
