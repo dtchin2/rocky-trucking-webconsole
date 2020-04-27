@@ -41,7 +41,8 @@
                 <label for="locZip">Location Zip (*)</label>
                 <input class="form-control" id="locZip" placeholder="Enter Location Zip" type="text" th:field="*{locationZipCode}">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+            <a class="btn btn-secondary" th:href="@{locations}" role="button">Cancel</a>
         </form>
     </div>
 </body>

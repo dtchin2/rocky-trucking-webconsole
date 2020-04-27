@@ -8,6 +8,14 @@
     <header th:insert="mainHeader.html"></header>
 
     <h1>Add Location Confirmation</h1>
-    <p th:text="${location.locationName}"></p>
+    <ul>
+        <li><p th:text="${location.locationName}"></p></li>
+        <li><p th:text="${location.locationAddress1}"></p></li>
+        <li><p th:text="${location.locationAddress2}"></p></li>
+        <li><p th:text="${location.locationCity}"></p></li>
+        <li><p th:text="${location.locationStateAbbr}"></p></li>
+        <li><p th:text="${location.locationZipCode}"></p></li>
+    </ul>
+    <a class="btn btn-primary add-btn-right" th:href="@{locations}" role="button">Continue</a>
 </body>
 </html>
