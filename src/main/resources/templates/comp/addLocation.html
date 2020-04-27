@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Location</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header th:insert="mainHeader.html"></header>
+
+    <div class="container">
+        <h1 class="header">Add New Location</h1>
+
+        <p>
+            This page is used to add new customer locations to the systems. Please enter all required fields marked with a
+             (*).
+        </p>
+
+        <form action="#", th:action="@{/addLocation}" th:object="${location}" method="post">
+            <div class="form-group">
+                <label for="locName">Location Name (*)</label>
+                <input class="form-control" id="locName" placeholder="Enter Location Name" type="text" th:field="*{locationName}">
+            </div>
+            <div class="form-group">
+                <label for="locAdd1">Location Address (*)</label>
+                <input class="form-control" id="locAdd1" placeholder="Enter Location Address" type="text" th:field="*{locationAddress1}">
+            </div>
+            <div class="form-group">
+                <label for="locAdd2">Location Address 2</label>
+                <input class="form-control" id="locAdd2" placeholder="Enter Location Address 2" type="text" th:field="*{locationAddress2}">
+            </div>
+            <div class="form-group">
+                <label for="locCity">Location City (*)</label>
+                <input class="form-control" id="locCity" placeholder="Enter Location City" type="text" th:field="*{locationCity}">
+            </div>
+            <div class="form-group">
+                <label for="locSt">Location State (*)</label>
+                <input class="form-control" id="locSt" placeholder="Enter Location State" type="text" th:field="*{locationStateAbbr}">
+            </div>
+            <div class="form-group">
+                <label for="locZip">Location Zip (*)</label>
+                <input class="form-control" id="locZip" placeholder="Enter Location Zip" type="text" th:field="*{locationZipCode}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
